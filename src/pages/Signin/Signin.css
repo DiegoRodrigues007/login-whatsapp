@@ -1,0 +1,105 @@
+
+
+.Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+    height: 100vh;
+    background:#173540;
+}
+
+.Container img{
+    width: 50%;
+    height: 100%;
+}
+
+.Content{
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 1px 2px #0003;
+    background-color: white;
+    max-width: 450px;
+    height: 95vh;
+    padding: 20px;
+    border-radius: 15px 5px 50px;
+    background:#FFF;
+
+}
+
+.Content input{
+
+    margin: 10px;
+}
+
+.Label{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 90px;
+    letter-spacing: 5px;
+    border-bottom: 2px solid #38BC5E;
+}
+
+.LabelSignup{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid #CACACA;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 5px;
+    width: 100%;
+    height: 40vh;
+}
+
+.LabelSignup p {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #4D4D4D;
+    text-align: center;
+    
+}
+
+.LabelSignup h2{
+    font-size: 20px;
+    text-align: left;
+    margin:10px ;
+}
+
+.labelError{
+    font-size: 16px;
+    color: red;
+    text-align: center;
+}
+
+.strong{
+    height: 50px;
+    border-radius: 5px;
+    background-color: #E8EDFF;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 12px;
+}
+
+.strong a{
+     text-align: right;
+    text-decoration: none;
+    color: #2655FB;
+      
+}
+
+
+
+
