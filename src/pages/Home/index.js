@@ -11,12 +11,14 @@ import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 
 // IMPORT DE COMPONENTES
 import ChatListIten from "../../components/ListContact/ChatListItem";
 import ChatIntro from "../../components/Chat/ChatIntro";
 import ChatWindow from "../../components/ChatWindow/";
 import NewChat from "../../components/NewChat";
+import MessageAutomatic from "../../components/MessageAutomatic";
 
 const Home = () => {
   // const { signout } = useAuth();
@@ -57,16 +59,26 @@ const Home = () => {
   // Esse useState é responsavel por dizer qual chat esta ativo no momento
   const [activeChat, setActiveChat] = useState({});
 
+
   const [user, setUser] = useState({
     id: 147,
     avatar: "https://www.w3schools.com/howto/img_avatar.png",
     name: "Diego",
   });
 
+
+  // ESSE USESTATE ESTA SENDO UTILIZADO PARA CRIAR A NOVA CONVERSA 
   const [showNewChat, setShowNewChat] = useState(false);
   const handleNewChat = () => {
     setShowNewChat(true);
   };
+
+
+  // ESSE USESTATE ESTA SENDO UTILIZADO PARA GERAR UMA LISTA ONDE O USUARIO IRA CONSEGUIR CRIAR SUA MENSAGEM AUTOMATICA
+  const [showNewBot, setShowNewBot] = useState(false);
+  const handleNewBot = () =>{
+    setShowNewBot(true);
+  }
 
   return (
     <C.Container>
@@ -78,6 +90,12 @@ const Home = () => {
             show={showNewChat}
             setShow={setShowNewChat}
           />
+          <MessageAutomatic
+          chatlist={chatlist}
+          user={user}
+          show = {showNewBot}
+          setShow={setShowNewBot}
+          />
           <header className="header">
             <img
               className="header-avatar"
@@ -85,6 +103,12 @@ const Home = () => {
               alt="Foto de perfil"
             />
             <div className="header-buttons">
+
+              <div onClick={handleNewBot} className="header-btn">
+                  <SmartToyIcon style= {{color: "#919191"}}
+                  />
+              </div>
+
               <div className="header-btn">
                 <DonutLargeIcon style={{ color: "#919191" }} />
               </div>
@@ -115,6 +139,7 @@ const Home = () => {
               <ChatListIten
                 key={key}
                 data={item}
+                
                 active={activeChat.chatId === chatlist[key].chatId}
                 onClick={() => setActiveChat(chatlist[key])}
               />
