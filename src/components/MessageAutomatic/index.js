@@ -5,8 +5,7 @@ import "../MessageAutomatic/MessageAutomatic.css";
 
 // IMPORT ICONS MATERIAL UI
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import EastIcon from "@mui/icons-material/East";
-import CheckBox from "../Checkbox";
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 export default ({ user, chatlist, show, setShow }) => {
   const [list, setList] = useState([
@@ -50,17 +49,24 @@ export default ({ user, chatlist, show, setShow }) => {
         <div className="newChat-headtitle">Crie uma mensagem automática</div>
       </div>
       {/* esta div esta gerando a lista de usuarios */}
-      <div className="newChat-List">
-        {list.map((item, key) => (
-          <div className="newChat-item" key={key}>
-            <img className="newChat-itemavatar" src={item.avatar} alt=" " />
-            <div className="newChat-itemname">{item.name}</div>
-
-            <CheckBox className="checkbox" />
+      <div className="chat-container">
+        <div className="icons-container">
+          <div className="chat-icons">
+            <InsertDriveFileIcon className="icon" />
+            <p>New</p>
           </div>
-        ))}
-        <div className="button-send">
-          <EastIcon />
+          <div className="chat-icons">
+            <InsertDriveFileIcon className="icon" />
+            <p>Import</p>
+          </div>
+          <div className="chat-icons">
+            <InsertDriveFileIcon className="icon" />
+            <p>Export</p>
+          </div>
+          <div className="chat-icons">
+            <InsertDriveFileIcon className="icon" />
+            <p>Delete</p>
+          </div>
         </div>
       </div>
     </div>
