@@ -7,7 +7,15 @@ import "../MessageAutomatic/MessageAutomatic.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
+// IMPORT COMPONENTS
+
+import ChatIntro from "../Chat/ChatIntro";
+import Painel from "../Painel";
+
+
 export default ({ user, chatlist, show, setShow }) => {
+
+  
   const [list, setList] = useState([
     {
       id: 123,
@@ -69,6 +77,104 @@ export default ({ user, chatlist, show, setShow }) => {
           </div>
         </div>
       </div>
+
+      <div className="container-table">
+        <div>
+          <table className="table" border={2}>
+            <tr className="title-table">
+              <td>Nome</td>
+              <td>Número</td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input className="table-input" type="text"></input>
+              </td>
+              <td>
+                <input className="table-input" type="number"></input>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+        
+      
+
+
+
+
     </div>
   );
 };

@@ -9,9 +9,10 @@ import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import SpeakerNotesIcon from "@mui/icons-material/SpeakerNotes";
 
 // IMPORT COMPONENTS
+
 import MessageAutomatic from "../MessageAutomatic";
 
-export default ({ user, chatlist, show, setShow }) => {
+export default ({ user, chatlist, show, setShow, setPainel }) => {
   const [list, setList] = useState([
     {
       id: 123,
@@ -45,8 +46,10 @@ export default ({ user, chatlist, show, setShow }) => {
   };
 
   const [showNewChat, setShowNewChat] = useState(false);
+
   const handleNewChat = () => {
     setShowNewChat(true);
+    setPainel(true);
   };
 
   return (
@@ -55,8 +58,10 @@ export default ({ user, chatlist, show, setShow }) => {
         <div onClick={handleClose} className="newChat-backbutton">
           <ArrowBackIcon style={{ color: "#FFFF" }} />
         </div>
+
         <div className="newChat-headtitle">Nova Conversa</div>
       </div>
+
       <div className="funcionalidades">
         <MessageAutomatic
           chatlist={chatlist}
@@ -69,15 +74,18 @@ export default ({ user, chatlist, show, setShow }) => {
           <GroupIcon style={{ color: "#2A948A" }} />
           <p>Novo grupo</p>
         </div>
+
         <div onClick={handleNewChat} className="styles-components">
           <SpeakerNotesIcon style={{ color: "#2A948A" }} />
           <p>Chat Automático</p>
         </div>
+
         <div className="styles-components">
           <GroupAddIcon style={{ color: "#2A948A" }} />
           <p>Novo Contato</p>
         </div>
       </div>
+
       <div className="newChat-List">
         {list.map((item, key) => (
           <div className="newChat-item" key={key}>

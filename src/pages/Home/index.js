@@ -19,6 +19,7 @@ import ChatIntro from "../../components/Chat/ChatIntro";
 import ChatWindow from "../../components/ChatWindow/";
 import NewChat from "../../components/NewChat";
 import MessageAutomatic from "../../components/MessageAutomatic";
+import Painel from "../../components/Painel";
 
 const Home = () => {
   // const { signout } = useAuth();
@@ -80,6 +81,8 @@ const Home = () => {
     setShowNewBot(true);
   }
 
+  const [painel, setPainel] = useState(false);
+
   return (
     <C.Container>
       <div className="app-window">
@@ -89,6 +92,7 @@ const Home = () => {
             user={user}
             show={showNewChat}
             setShow={setShowNewChat}
+            setPainel = {setPainel}
           />
           <MessageAutomatic
           chatlist={chatlist}
@@ -153,7 +157,9 @@ const Home = () => {
 
           {/* Quando não existir um chat ativo, ele ira retornar para a página principal */}
 
-          {activeChat.chatId === undefined && <ChatIntro />}
+          {activeChat.chatId === undefined && !painel&& <ChatIntro/>}
+          {painel && <Painel/>}
+
         </div>
       </div>
     </C.Container>
